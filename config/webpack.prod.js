@@ -18,21 +18,23 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 /**
  * Webpack Constants
  */
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
-const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
+const METADATA = webpackMerge(commonConfig({ env: ENV }).metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
-  HMR: false
+  HMR: false,
+  SIGNALR_URL: 'http://ng2-signalr-backend.azurewebsites.net/'
 });
 
 module.exports = function (env) {
-  return webpackMerge(commonConfig({env: ENV}), {
+  return webpackMerge(commonConfig({ env: ENV }), {
 
     /**
      * Developer tool to enhance debugging
@@ -124,6 +126,7 @@ module.exports = function (env) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'SIGNALR_URL': JSON.stringify(METADATA.SIGNALR_URL)
         }
       }),
 
@@ -136,41 +139,41 @@ module.exports = function (env) {
        */
       // NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
       new UglifyJsPlugin({
-        // beautify: true, //debug
-        // mangle: false, //debug
-        // dead_code: false, //debug
-        // unused: false, //debug
-        // deadCode: false, //debug
-        // compress: {
-        //   screw_ie8: true,
-        //   keep_fnames: true,
-        //   drop_debugger: false,
-        //   dead_code: false,
-        //   unused: false
-        // }, // debug
-        // comments: true, //debug
-
-
-        beautify: false, //prod
-        output: {
-          comments: false
-        }, //prod
-        mangle: {
-          screw_ie8: true
-        }, //prod
+        beautify: true, //debug
+        mangle: false, //debug
+        dead_code: false, //debug
+        unused: false, //debug
+        deadCode: false, //debug
         compress: {
           screw_ie8: true,
-          warnings: false,
-          conditionals: true,
-          unused: true,
-          comparisons: true,
-          sequences: true,
-          dead_code: true,
-          evaluate: true,
-          if_return: true,
-          join_vars: true,
-          negate_iife: false // we need this for lazy v8
-        },
+          keep_fnames: true,
+          drop_debugger: false,
+          dead_code: false,
+          unused: false
+        }, // debug
+        comments: true, //debug
+
+
+        // beautify: false, //prod
+        // output: {
+        //   comments: false
+        // }, //prod
+        // mangle: {
+        //   screw_ie8: true
+        // }, //prod
+        // compress: {
+        //   screw_ie8: true,
+        //   warnings: false,
+        //   conditionals: true,
+        //   unused: true,
+        //   comparisons: true,
+        //   sequences: true,
+        //   dead_code: true,
+        //   evaluate: true,
+        //   if_return: true,
+        //   join_vars: true,
+        //   negate_iife: false // we need this for lazy v8
+        // },
       }),
 
       /**
@@ -267,14 +270,18 @@ module.exports = function (env) {
 
       /**
        * Plugin: BundleAnalyzerPlugin
-       * Description: Webpack plugin and CLI utility that represents 
+       * Description: Webpack plugin and CLI utility that represents
        * bundle content as convenient interactive zoomable treemap
-       * 
+       *
        * `npm run build:prod -- --env.analyze` to use
        *
        * See: https://github.com/th0r/webpack-bundle-analyzer
        */
-
+      new CopyWebpackPlugin([{
+        from: 'server'
+      }, {
+        from: 'dist'
+      }]),
     ],
 
     /*

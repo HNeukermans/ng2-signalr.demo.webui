@@ -15,7 +15,7 @@ export class HomeRouteResolver implements Resolve<SignalRConnection> {
         let config = new SignalRConfiguration();
         config.hubName = 'Ng2SignalRHub';
         config.qs =  { user :  'Hannes'} ;
-        config.url = 'http://localhost:10772/signalr/hubs';
+        config.url = process.env.SIGNALR_URL; // 'http://localhost:10772/signalr/hubs';
         return config;
     }
 }
