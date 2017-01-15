@@ -3,12 +3,12 @@ import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
-import { HOMEROUTES } from './home/home.route';
+import { HOMEROUTES } from './home/route';
+import { DOCUMENTATIION_ROUTE  } from './documentation/route';
 
 export const ROUTES: Routes = [
   ...HOMEROUTES,
-  // { path: '',      component: HomeComponent },
-  // { path: 'home',  component: HomeComponent },
+  ...DOCUMENTATIION_ROUTE,
   { path: 'detail', loadChildren: './+detail/index#DetailModule'},
   { path: '**',    component: NoContentComponent },
 ];

@@ -24,7 +24,8 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
-  HMR: HMR
+  HMR: HMR,
+  SIGNALR_URL: 'http://ng2-signalr-backend.azurewebsites.net/' //'http://localhost:10772/'
 });
 
 /**
@@ -103,6 +104,7 @@ module.exports = function (options) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'SIGNALR_URL': JSON.stringify(METADATA.SIGNALR_URL)
         }
       }),
 

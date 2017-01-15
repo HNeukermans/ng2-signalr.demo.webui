@@ -1,13 +1,13 @@
 webpackJsonp([ 0 ], {
     /***/
-    719: /***/
+    723: /***/
     function(module, exports, __webpack_require__) {
         "use strict";
         Object.defineProperty(exports, "__esModule", {
             value: !0
         });
         /* harmony import */
-        var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(116), __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(420), __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0), __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(254), __WEBPACK_IMPORTED_MODULE_4__detail_component__ = __webpack_require__(720);
+        var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(116), __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(423), __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0), __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(164), __WEBPACK_IMPORTED_MODULE_4__detail_component__ = __webpack_require__(724);
         /* harmony export (binding) */
         __webpack_require__.d(exports, "routes", function() {
             return routes;
@@ -22,7 +22,7 @@ webpackJsonp([ 0 ], {
             pathMatch: "full"
         } ], DetailModule = function() {
             function DetailModule() {}
-            return DetailModule.routes = routes, DetailModule = __decorate([ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__.i)({
+            return DetailModule.routes = routes, DetailModule = __decorate([ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__.NgModule)({
                 declarations: [ // Components / Directives/ Pipes
                 __WEBPACK_IMPORTED_MODULE_4__detail_component__.a ],
                 imports: [ __WEBPACK_IMPORTED_MODULE_0__angular_common__.b, __WEBPACK_IMPORTED_MODULE_1__angular_forms__.a, __WEBPACK_IMPORTED_MODULE_3__angular_router__.a.forChild(routes) ]
@@ -30,7 +30,7 @@ webpackJsonp([ 0 ], {
         }();
     },
     /***/
-    720: /***/
+    724: /***/
     function(module, exports, __webpack_require__) {
         "use strict";
         /* harmony import */
@@ -48,7 +48,7 @@ webpackJsonp([ 0 ], {
             function DetailComponent() {}
             return DetailComponent.prototype.ngOnInit = function() {
                 console.log("hello `Detail` component");
-            }, DetailComponent = __decorate([ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__._2)({
+            }, DetailComponent = __decorate([ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__.Component)({
                 selector: "detail",
                 template: "\n    <h1>Hello from Detail</h1>\n    <router-outlet></router-outlet>\n  "
             }), __metadata("design:paramtypes", []) ], DetailComponent);
