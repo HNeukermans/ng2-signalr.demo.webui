@@ -1,13 +1,13 @@
 webpackJsonp([ 0 ], {
     /***/
-    723: /***/
+    724: /***/
     function(module, exports, __webpack_require__) {
         "use strict";
         Object.defineProperty(exports, "__esModule", {
             value: !0
         });
         /* harmony import */
-        var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(116), __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(423), __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0), __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(164), __WEBPACK_IMPORTED_MODULE_4__detail_component__ = __webpack_require__(724);
+        var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(116), __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(424), __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0), __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(164), __WEBPACK_IMPORTED_MODULE_4__detail_component__ = __webpack_require__(725);
         /* harmony export (binding) */
         __webpack_require__.d(exports, "routes", function() {
             return routes;
@@ -30,7 +30,7 @@ webpackJsonp([ 0 ], {
         }();
     },
     /***/
-    724: /***/
+    725: /***/
     function(module, exports, __webpack_require__) {
         "use strict";
         /* harmony import */

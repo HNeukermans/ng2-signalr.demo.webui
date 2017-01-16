@@ -36,6 +36,9 @@ import 'ts-helpers';
 import 'expose-loader?jQuery!jquery';
 import '../node_modules/signalr/jquery.signalR.js';
 
+import 'prismjs';
+//import 'ng2-prism';
+
 if ('production' === ENV) {
   // Production
 

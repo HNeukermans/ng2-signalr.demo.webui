@@ -20,6 +20,7 @@ import { NoContentComponent } from './no-content';
 import { SignalRModule } from 'ng2-signalr';
 import { signalrConfiguration } from './app.config';
 
+
 // Application wide providers
 const APP_PROVIDERS = [
   ConnectionResolver,
