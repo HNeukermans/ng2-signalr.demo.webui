@@ -27,7 +27,8 @@
   width: 350px;
   height: 85px;
   font-size: 200%;
-  margin: 150px;
+  margin: 50px;
+  margin-top: 100px;
 }
 
 .cancel {
@@ -83,12 +84,12 @@
 }
 
 .code-editor:before {
-	content: 'Code Editor';
+	content: 'Code';
 	font-family: 'Consolas';
 	color: #222;
 	padding-top: 6px;
 	text-align: center;
-	xtop: 0px;
+	xtop: 5px;
 	width: 750px;
 	height: 30px;
 	background-color: #fafafa;

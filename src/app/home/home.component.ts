@@ -1,5 +1,6 @@
 import { Component, NgZone, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
+import { routerTransition } from './route.transition';
 
 declare var Prism: any;
 
@@ -10,7 +11,8 @@ declare var Prism: any;
   ],
   styleUrls: ['./home.component.css'],
   templateUrl: './home.component.html',
-
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class HomeComponent implements AfterViewChecked   {
 
