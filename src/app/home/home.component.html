@@ -14,15 +14,11 @@ export class ConnectionResolver implements Resolve{{ '<' }}SignalRConnection> {{
 
     constructor(private _signalR: SignalR)  {{ '{' }}
 
-     resolve() {{ '{' }}
+    resolve() {{ '{' }}
         console.log('HomeRouteResolver. Resolving...');
         return this._signalR.connect();
     }
-
 }
-
-
-
 </code></pre>
   </div>
 
