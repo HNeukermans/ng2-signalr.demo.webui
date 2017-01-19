@@ -1,4 +1,13 @@
-<div class="card-container">
+<div class="container">
+
+<div class="row">
+  <button class="btn btn-primary" (click)="listenForMessages();">Listen</button>
+   <label>message:</label><input type="text" [(ngModel)]="message">
+  <button class="btn btn-primary" (click)="chat();">chat</button>
+
+  <ul>
+    <li *ngFor="let msg of chatMessages">{{ msg.user }} -- {{ msg.content }}</li>
+  </ul>
 
   <h2>Errors</h2>
   <ul>
@@ -58,5 +67,6 @@
   <ul>
     <li *ngFor="let msg of chatMessagesWithStatus">{{ msg[0].user }} -- {{ msg[0].content }} -- {{ msg[1].name }} </li>
   </ul>
+  </div>
 </div>
 
