@@ -1,9 +1,26 @@
 <div class="container">
 
+
+
 <div class="row">
-  <button class="btn btn-primary" (click)="listenForMessages();">Listen</button>
-   <label>message:</label><input type="text" [(ngModel)]="message">
-  <button class="btn btn-primary" (click)="chat();">chat</button>
+  <div class="col-md-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="enter message..." [(ngModel)]="message">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="chat();">+</button>
+      </span>
+    </div>
+  </div>
+  <div class="col-md-8" style="padding-top:5px">
+    <div class="checkbox-inline">
+      <label>
+        <input type="checkbox" (click)="listenForMessages();" checked/> Subscribe
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row">
 
   <ul>
     <li *ngFor="let msg of chatMessages">{{ msg.user }} -- {{ msg.content }}</li>

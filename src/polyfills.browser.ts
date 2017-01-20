@@ -36,6 +36,8 @@ import 'ts-helpers';
 import 'expose-loader?jQuery!jquery';
 import '../node_modules/signalr/jquery.signalR.js';
 
+//import 'style-loader!css-loader?../node_modules/font-awesome/css/font-awesome.css';
+
 import 'prismjs';
 //import 'ng2-prism';
 
