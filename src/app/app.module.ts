@@ -19,7 +19,7 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { NoContentComponent } from './no-content';
 import { SignalRModule } from 'ng2-signalr';
 import { signalrConfiguration } from './app.config';
-
+import { BusyModule } from 'angular2-busy';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -51,7 +51,8 @@ type StoreType = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    SignalRModule.configure(signalrConfiguration)
+    SignalRModule.configure(signalrConfiguration),
+    BusyModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
