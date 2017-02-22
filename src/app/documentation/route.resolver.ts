@@ -9,6 +9,6 @@ export class ConnectionResolver implements Resolve<SignalRConnectionMock> {
 
     resolve() {
         console.log('HomeRouteResolver. Resolving...');
-        return new SignalRConnectionMock();// this._signalR.connect();
+        return this._signalR.connect();
     }
 }
